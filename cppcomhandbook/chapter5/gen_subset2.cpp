@@ -1,20 +1,30 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-// Method 2: using exploitation of bit representation of integers
-
-int main(){
-  vector <int> S = {0,1,2};
-  int n = S.size();
-  for(int b = 0; b < (1<<n); b++){
-    // process subset
-  }
-  for(int b = 0; b < (1<<n); b++){
-    vector<int>subset;
-    for(int i = 0;i<n;i++){
-      if (b&(1<<i)) subset.push_back(S[i]);
+// Prints sums of all subsets of arr[l..r]
+void subsetSums(int arr[], int l, int r,
+                int sum=0)
+      {
+    // Print current subset
+    if (l > r)
+    {
+        cout << sum << " ";
+        return;
     }
-    for (auto x:subset) cout<<x;
-    cout<<endl;
-  }
+
+    // Subset including arr[l]
+    subsetSums(arr, l+1, r, sum+arr[l]);
+
+    // Subset excluding arr[l]
+    subsetSums(arr, l+1, r, sum);
+}
+
+// Driver code
+int main()
+{
+    int arr[] = {41, -41, 41};
+    int n = sizeof(arr)/sizeof(arr[0]);
+
+    subsetSums(arr, 0, n-1);
+    return 0;
 }
