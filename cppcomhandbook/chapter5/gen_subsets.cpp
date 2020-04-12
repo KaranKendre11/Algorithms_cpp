@@ -18,7 +18,7 @@ void search(vector<int>s1,int k,int n,vector<int> subs){
 }
 
 int main(){
-  vector<int> s1 = {4,14,2};
+  vector<int> s1 = {1,2,3,4,5};
   vector<int> subset;
   int n = s1.size();
   search(s1,0,n,subset);
