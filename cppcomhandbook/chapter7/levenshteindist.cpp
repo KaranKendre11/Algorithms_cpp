@@ -10,8 +10,8 @@ int min(int x,int y,int z){
 }
 
 int main(){
-  string str1 = "LOVE";
-  string str2 = "MOVIE";
+  string str1 = "FIRSTSTR";
+  string str2 = "SECONDSTR";
 
   int len1 = str1.length();
   int len2 = str2.length();
